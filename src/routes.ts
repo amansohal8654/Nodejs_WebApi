@@ -11,7 +11,7 @@ const routes = (app: Express) => {
     //create user endpoint
     app.post("/api/createUser", validateResources(createUserSchema), createUserHandler);
 
-    app.post("api/session", validateResources(createSessionSchema), createUserSessionHandler);
+    app.post("/api/session", validateResources(createSessionSchema), createUserSessionHandler);
 }
 
 export default routes;
