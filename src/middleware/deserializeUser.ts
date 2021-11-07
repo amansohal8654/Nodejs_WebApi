@@ -14,4 +14,6 @@ export function deserializeUser(req: Request, res: Response, next: NextFunction)
         res.locals.user = decoded;
         return next()
     }
+
+    return next();
 }

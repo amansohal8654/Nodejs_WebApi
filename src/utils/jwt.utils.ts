@@ -22,6 +22,7 @@ export function verifyJwt(token: string){
         }
     }
     catch(err: any){
+        console.log(err);
         return {
             valid: false,
             expire: err.message("Json web token is expire"),

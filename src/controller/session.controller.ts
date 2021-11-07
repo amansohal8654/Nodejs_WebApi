@@ -33,5 +33,5 @@ export async function getUserSessionsHandler(req: Request, res: Response){
     const userId = res.locals.user._id;
     const sessions = await getUserSessions({user: userId, valid: true});
 
-    return res.send(sessions)
+    return res.send(sessions);
 }
