@@ -4,6 +4,7 @@ import { createUserSessionHandler, getUserSessionsHandler} from './controller/se
 import validateResources from './middleware/validateResources';
 import { createUserSchema } from './schema/user.schema';
 import { createSessionSchema } from './schema/session.schema';
+import requireUser from './middleware/requireUser';
 
 const routes = (app: Express) => {
     app.get("/healthCheck", (req: Request, res: Response) => res.sendStatus(200))
@@ -13,7 +14,7 @@ const routes = (app: Express) => {
 
     app.post("/api/session", validateResources(createSessionSchema), createUserSessionHandler);
 
-    app.get("/api/getUserSessions", getUserSessionsHandler);
+    app.get("/api/getUserSessions", requireUser, getUserSessionsHandler);
 }
 
 export default routes;
