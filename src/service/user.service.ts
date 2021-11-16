@@ -1,7 +1,6 @@
 import UserModel, { UserDocument, UserInput } from "../models/users.model";
 
 import { omit } from "lodash";
-import exp from "constants";
 import { FilterQuery } from "mongoose";
 
 export async function createUser(input: UserInput){

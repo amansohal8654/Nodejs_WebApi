@@ -11,7 +11,7 @@ export const createUserSchema = object({
         passwordConfirmation:  string({
             required_error: "password is required please fill out the field password"
         }),
-        email:  string({
+        email: string({
             required_error: "email is required please fill out the field email"
         }).email("your email is not valid")
     }).refine((data) => data.password === data.passwordConfirmation, {
